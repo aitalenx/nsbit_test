@@ -79,7 +79,8 @@ namespace NSbit_显示类 {
             //basic.pause(1);
             control.waitMicros(1000);
         }
-
+        pins.analogWritePin(pin, 0);
+		
     }
 
     //% blockId=cbit_RGB block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|红色 %value1|绿色 %value2|蓝色 %value3"
