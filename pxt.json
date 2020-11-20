@@ -1,21 +1,23 @@
 {
-    "name": "test1",
-    "description": "",
+    "name": "NSBit",
+    "version": "0.0.1",
+    "description": "Extension for ZYRobot micro:bit",
+    "license": "MIT",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "cBit": "github:gokingstones/cbit#a966dec56744d353364f48e9b0c55dea2ff6e14f"
+        "neopixel": "github:microsoft/pxt-neopixel#v0.3.10",
+        "cbit_IR":  "github:zhuning239/cBit_IR"
+	
+
     },
     "files": [
-        "main.blocks",
+        "README.md",
         "main.ts",
-        "README.md"
+        "_locales/zh/cbit-strings.json"
+
     ],
     "testFiles": [
         "test.ts"
     ],
-    "supportedTargets": [
-        "microbit"
-    ],
-    "preferredEditor": "blocksprj"
+    "public": true
 }
