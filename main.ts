@@ -74,7 +74,7 @@ namespace NSbit_显示类 {
             control.waitMicros(1000);
         }
         basic.pause(10);
-        for (let i: number = 1023; i > 0; i--) {
+        for (let i: number = 255; i > 0; i--) {
             pins.analogWritePin(pin, i * 1024 / 256);
             //basic.pause(1);
             control.waitMicros(1000);
