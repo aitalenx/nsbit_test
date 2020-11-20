@@ -68,14 +68,14 @@ namespace NSbit_显示类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function BreathLED(pin: AnalogPin): void {
 
-        for (let i: number = 0; i < 1023; i++) {
-            pins.analogWritePin(pin, i);
+        for (let i: number = 0; i < 256; i++) {
+            pins.analogWritePin(pin, i * 1024 / 256);
             //basic.pause(1);
             control.waitMicros(1000);
         }
         basic.pause(10);
         for (let i: number = 1023; i > 0; i--) {
-            pins.analogWritePin(pin, i);
+            pins.analogWritePin(pin, i * 1024 / 256);
             //basic.pause(1);
             control.waitMicros(1000);
         }
