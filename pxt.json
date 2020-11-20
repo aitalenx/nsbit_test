@@ -1,0 +1,21 @@
+{
+    "name": "test1",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "cBit": "github:gokingstones/cbit#a966dec56744d353364f48e9b0c55dea2ff6e14f"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
