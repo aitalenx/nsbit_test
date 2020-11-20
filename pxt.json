@@ -1,12 +1,12 @@
 {
     "name": "NSBit",
     "version": "0.0.1",
-    "description": "Extension for ZYRobot micro:bit",
+    "description": "Extension for NSBOT micro:bit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
         "neopixel": "github:microsoft/pxt-neopixel#v0.3.10",
-        "cbit_IR":  "github:aitalenx/NSbit_IR"
+        "NSbit_IR":  "https://github.com/aitalenx/NSbit_IR"
 	
 
     },
