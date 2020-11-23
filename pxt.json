@@ -6,14 +6,14 @@
     "dependencies": {
         "core": "*",
         "neopixel": "github:microsoft/pxt-neopixel#v0.3.10",
-        "NSbit_IR":  "github:aitalenx/NSbit_IR"
+        "NSbit_IR": "github:aitalenx/NSbit_IR"
 	
 
     },
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/cbit-strings.json"
+        "_locales/zh/nsbit-strings.json"
 
     ],
     "testFiles": [
