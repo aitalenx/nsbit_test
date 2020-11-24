@@ -545,14 +545,14 @@ namespace NSbit_小车类 {
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="右侧电机正转"
-        Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="右侧电机反转"
-        Right_F_Motor = 2,
         //% blockId="Left_Z_Motor" block="左侧电机正转"
-        Left_Z_Motor = 3,
+        Left_Z_Motor = 1,
         //% blockId="Left_F_Motor" block="左侧电机反转"
-        Left_F_Motor = 4       
+        Left_F_Motor = 2
+        //% blockId="Right_Z_Motor" block="右侧电机正转"
+        Right_Z_Motor = 3,
+        //% blockId="Right_F_Motor" block="右侧电机反转"
+        Right_F_Motor = 4,		
     }
 
     function i2cwrite(addr: number, reg: number, value: number) {
@@ -1219,10 +1219,10 @@ namespace NSbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function AloneCtrlSpeed(index: AloneState, speed: number): void {
         switch (index) {
-            case AloneState.Right_Z_Motor: Right_Z_run(speed); break;
-            case AloneState.Right_F_Motor: Right_F_run(speed); break;
             case AloneState.Left_Z_Motor: Left_Z_run(speed); break;
             case AloneState.Left_F_Motor: Left_F_run(speed); break;
+			case AloneState.Right_Z_Motor: Right_Z_run(speed); break;
+            case AloneState.Right_F_Motor: Right_F_run(speed); break;
         }
     }    
 }
