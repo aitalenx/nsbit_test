@@ -30,4 +30,7 @@
   "NSbit_小车类.Servo_Car|block": "小车舵机|编号 %num|角度 %value",
   "NSbit_小车类.CarCtrl|block": "小车控制|%index",
   "NSbit_小车类.CarCtrlSpeed|block": "小车控制|%index|速度 %speed"
+  
+  "NSbit_IR.onPressEvent|block": "按键|%index|速度 %speed"
+
 }
