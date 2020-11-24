@@ -41,7 +41,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_LED1 block="LED灯|引脚 %pin|状态 %value"
     //% weight=5
     //% blockGap=8
-    //% color="#C814B8"
+    //% color="#1428c8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=1
     export function LED1(pin: DigitalPin, value: enLED1): void {
 
@@ -52,7 +52,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_LED2 block="LED灯|引脚 %pin|亮度 %value"
     //% weight=4
     //% blockGap=8
-    //% color="#C814B8"
+    //% color="#1428c8"
     //% value.min=0 value.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=2
     export function LED2(pin: AnalogPin, value: number): void {
@@ -64,7 +64,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_BreathLED block="呼吸灯|引脚 %pin"
     //% weight=3
     //% blockGap=8
-    //% color="#C814B8"
+    //% color="#1428c8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function BreathLED(pin: AnalogPin): void {
 
@@ -86,7 +86,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_RGB block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|红色 %value1|绿色 %value2|蓝色 %value3"
     //% weight=2
     //% blockGap=8
-    //% color="#C814B8"
+    //% color="#1428c8"
     //% value1.min=0 value1.max=255 value2.min=0 value2.max=255 value3.min=0 value3.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB(pin1: AnalogPin, pin2: AnalogPin, pin3: AnalogPin, value1: number, value2: number, value3: number): void {
@@ -99,7 +99,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_RGB2 block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|显示 %value"
     //% weight=1
     //% blockGap=8
-    //% color="#C814B8"
+    //% color="#1428c8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB2(pin1: DigitalPin, pin2: DigitalPin, pin3: DigitalPin, value: enColor): void {
 
@@ -293,7 +293,7 @@ namespace NSbit_输入类 {
     //% blockId=NSbit_TouchPad block="触摸开关|引脚 %pin|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#808080"
+    //% color="#b0c814"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function TouchPad(pin: DigitalPin, value: enTouch): boolean {
 
@@ -309,7 +309,7 @@ namespace NSbit_输入类 {
     //% blockId=NSbit_Rocker block="遥杆|VRX %pin1|VRY %pin2|SW %pin3|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#808080"
+    //% color="#b0c814"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
     export function Rocker(pin1: AnalogPin, pin2: AnalogPin, pin3: AnalogPin, value: enRocker): boolean {
 
@@ -351,7 +351,7 @@ namespace NSbit_输入类 {
     //% blockId=NSbit_Button block="按键|引脚 %pin|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#808080"
+    //% color="#b0c814"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function Button(pin: DigitalPin, value: enButton): boolean {
 
@@ -383,7 +383,7 @@ namespace NSbit_音乐类 {
     //% blockId=NSbit_Buzzer block="有源蜂鸣器|引脚 %pin|值 %value"
     //% weight=100
     //% blockGap=10 
-    //% color="#D2691E"
+    //% color="#14a8c8"
     //% value.min=0 value.max=1
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=8
     export function Buzzer(pin: DigitalPin, value: enBuzzer): void {
@@ -405,7 +405,7 @@ namespace NSbit_电机类 {
     //% blockId=NSbit_Fan block="风扇|引脚 %pin|速度 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#0000CD"
+    //% color="#de7372"
     //% value.min=0 value.max=1023
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=9
     export function Fan(pin: AnalogPin, value: number): void {
@@ -417,7 +417,7 @@ namespace NSbit_电机类 {
     //% blockId=NSbit_Servo block="舵机|引脚 %pin|角度 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#0000CD"
+    //% color="#de7372"
     //% value.min=0 value.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=9
     export function Servo(pin: AnalogPin, value: number): void {
