@@ -1030,7 +1030,7 @@ namespace NSbit_小车类 {
 
 
     //% blockId=NSbit_ultrasonic_car block="超声波返回(cm)"
-    //% color="#006400"
+    //% color="#c85ad8"
     //% weight=98
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -1052,7 +1052,7 @@ namespace NSbit_小车类 {
     //% blockId=NSbit_Music_Car block="小车音乐播放|%index"
     //% weight=97
     //% blockGap=10
-    //% color="#006400"
+    //% color="#c85ad8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Music_Car(index: enMusic): void {
         switch (index) {
@@ -1081,7 +1081,7 @@ namespace NSbit_小车类 {
     //% blockId=NSbit_Servo_Car block="小车舵机|编号 %num|角度 %value"
     //% weight=96
     //% blockGap=10
-    //% color="#006400"
+    //% color="#c85ad8"
     //% num.min=1 num.max=3 value.min=0 value.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=9
     export function Servo_Car(num: enServo, value: number): void {
@@ -1096,7 +1096,7 @@ namespace NSbit_小车类 {
     //% blockId=NSbit_Avoid_Sensor block="避障传感器|检测到 %value"
     //% weight=95
     //% blockGap=10
-    //% color="#006400"
+    //% color="#c85ad8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Avoid_Sensor(value: enAvoidState): boolean {
 
@@ -1136,7 +1136,7 @@ namespace NSbit_小车类 {
     //% blockId=NSbit_Line_Sensor block="巡线传感器|位置 %direct|检测到 %value"
     //% weight=94
     //% blockGap=10
-    //% color="#006400"
+    //% color="#c85ad8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Line_Sensor(direct: enPos, value: enLineState): boolean {
 
@@ -1181,7 +1181,7 @@ namespace NSbit_小车类 {
     //% blockId=NSbit_CarCtrl block="小车控制|%index"
     //% weight=93
     //% blockGap=10
-    //% color="#006400"
+    //% color="#c85ad8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function CarCtrl(index: CarState): void {
         switch (index) {
@@ -1198,7 +1198,7 @@ namespace NSbit_小车类 {
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
-    //% color="#006400"
+    //% color="#c85ad8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function CarCtrlSpeed(index: CarState, speed: number): void {
         switch (index) {
@@ -1215,7 +1215,7 @@ namespace NSbit_小车类 {
     //% weight=91
     //% blockGap=10
     //% speed.min=0 speed.max=255
-    //% color="#006400"
+    //% color="#c85ad8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function AloneCtrlSpeed(index: AloneState, speed: number): void {
         switch (index) {
