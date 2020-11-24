@@ -182,7 +182,7 @@ namespace NSbit_传感器类 {
     //% blockId=NSbit_Voice_Sensor block="声音传感器|引脚 %pin|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#87CEEB"
+    //% color="#c89314"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Voice_Sensor(pin: DigitalPin, value: enVoice): boolean {
 
@@ -207,7 +207,7 @@ namespace NSbit_传感器类 {
     //% blockId=NSbit_IR_Sensor block="红外传感器|引脚 %pin|  |%value|障碍物"
     //% weight=100
     //% blockGap=10
-    //% color="#87CEEB"
+    //% color="#c89314"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function IR_Sensor(pin: DigitalPin, value: enIR): boolean {
 
@@ -225,7 +225,7 @@ namespace NSbit_传感器类 {
     //% blockId=NSbit_IR_Send block="红外发射|引脚 %pin"
     //% weight=100
     //% blockGap=10
-    //% color="#87CEEB"
+    //% color="#c89314"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function IR_Send(pin: DigitalPin): void {
 
@@ -235,7 +235,7 @@ namespace NSbit_传感器类 {
     }
    
     //% blockId=NSbit_ultrasonic block="超声波|发射管脚 %Trig|接收管脚 %Echo"
-    //% color="#87CEEB"
+    //% color="#c89314"
     //% weight=100
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
