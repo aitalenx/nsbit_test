@@ -2,7 +2,7 @@
 R
 modified from liusen
 load dependency
-"NSbit": "file:../pxt-NSbit"
+"cbit": "file:../pxt-cbit"
 */
 
 
