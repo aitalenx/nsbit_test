@@ -7,7 +7,7 @@ load dependency
 
 
 
-//% color="#1428c8" weight=25 icon="\uf1d4"
+//% color="#5984c7" weight=25 icon="\uf1d4"
 namespace NSbit_显示类 {
     
     export enum enColor {
@@ -41,7 +41,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_LED1 block="LED灯|引脚 %pin|状态 %value"
     //% weight=5
     //% blockGap=8
-    //% color="#1428c8"
+    //% color="#5984c7"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=1
     export function LED1(pin: DigitalPin, value: enLED1): void {
 
@@ -52,7 +52,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_LED2 block="LED灯|引脚 %pin|亮度 %value"
     //% weight=4
     //% blockGap=8
-    //% color="#1428c8"
+    //% color="#5984c7"
     //% value.min=0 value.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=2
     export function LED2(pin: AnalogPin, value: number): void {
@@ -64,7 +64,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_BreathLED block="呼吸灯|引脚 %pin"
     //% weight=3
     //% blockGap=8
-    //% color="#1428c8"
+    //% color="#5984c7"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function BreathLED(pin: AnalogPin): void {
 
@@ -86,7 +86,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_RGB block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|红色 %value1|绿色 %value2|蓝色 %value3"
     //% weight=2
     //% blockGap=8
-    //% color="#1428c8"
+    //% color="#5984c7"
     //% value1.min=0 value1.max=255 value2.min=0 value2.max=255 value3.min=0 value3.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB(pin1: AnalogPin, pin2: AnalogPin, pin3: AnalogPin, value1: number, value2: number, value3: number): void {
@@ -99,7 +99,7 @@ namespace NSbit_显示类 {
     //% blockId=NSbit_RGB2 block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|显示 %value"
     //% weight=1
     //% blockGap=8
-    //% color="#1428c8"
+    //% color="#5984c7"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB2(pin1: DigitalPin, pin2: DigitalPin, pin3: DigitalPin, value: enColor): void {
 
