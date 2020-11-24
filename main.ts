@@ -1226,3 +1226,21 @@ namespace NSbit_小车类 {
         }
     }    
 }
+    //% color="#14c884" weight=19
+    //% icon="\uf1eb"
+declare namespace NSbit_IR {
+
+    /**
+     * button pushed.
+     */
+    //% blockId=ir_received_left_event
+    //% block="按键 |%btn| 按下" shim=Mbit_IR::onPressEvent
+    function onPressEvent(btn: RemoteButton, body: () => void): void;
+
+    /**
+     * initialises local variablesssss
+     */
+    //% blockId=ir_init
+    //% block="红外接收器连接到 %pin" shim=Mbit_IR::init
+    function init(pin: Pins): void;
+}
