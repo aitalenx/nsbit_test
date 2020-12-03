@@ -553,13 +553,13 @@ namespace NSbit_小车类 {
         //% blockId="Left_F_Motor" block="左侧电机反转"
         Left_F_Motor = 4,
         //% blockId="RightRear_Z_Motor" block="右前侧电机正转"
-        Right_Z_Motor = 5,
+        RightRear_Z_Motor = 5,
         //% blockId="RightRear_F_Motor" block="右后侧电机反转"
-        Right_F_Motor = 6,
+        RightRear_F_Motor = 6,
         //% blockId="LeftRear_Z_Motor" block="左前侧电机正转"
-        Left_Z_Motor = 7,
+        LeftRear_Z_Motor = 7,
         //% blockId="LeftRear_F_Motor" block="左后侧电机反转"
-        Left_F_Motor = 8		
+        LeftRear_F_Motor = 8		
     }
 
     function i2cwrite(addr: number, reg: number, value: number) {
