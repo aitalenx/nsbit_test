@@ -551,7 +551,15 @@ namespace NSbit_小车类 {
         //% blockId="Left_Z_Motor" block="左侧电机正转"
         Left_Z_Motor = 3,
         //% blockId="Left_F_Motor" block="左侧电机反转"
-        Left_F_Motor = 4       
+        Left_F_Motor = 4,
+        //% blockId="RightRear_Z_Motor" block="右前侧电机正转"
+        Right_Z_Motor = 5,
+        //% blockId="RightRear_F_Motor" block="右后侧电机反转"
+        Right_F_Motor = 6,
+        //% blockId="LeftRear_Z_Motor" block="左前侧电机正转"
+        Left_Z_Motor = 7,
+        //% blockId="LeftRear_F_Motor" block="左后侧电机反转"
+        Left_F_Motor = 8		
     }
 
     function i2cwrite(addr: number, reg: number, value: number) {
@@ -687,8 +695,8 @@ namespace NSbit_小车类 {
 		setPwm(5, 0, 4095);
 		setPwm(4, 0, 4095);
 		
-        setPwm(14, 0, speed);
-        setPwm(15, 0, 0);
+        setPwm(15, 0, speed);
+        setPwm(14, 0, 0);
     }
      function Right_F_run(speed: number) {
 
@@ -706,8 +714,85 @@ namespace NSbit_小车类 {
 		setPwm(5, 0, 4095);
 		setPwm(4, 0, 4095);
 		
-        setPwm(14, 0, 0);
-        setPwm(15, 0, speed);
+        setPwm(15, 0, 0);
+        setPwm(14, 0, speed);
+    }    
+	function LeftRear_Z_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
+        setPwm(3, 0, speed);
+        setPwm(2, 0, 0);
+
+        //setPwm(15, 0, 0);
+        //setPwm(14, 0, 0);
+    }
+   function LeftRear_F_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
+        setPwm(3, 0, 0);
+        setPwm(2, 0, speed);
+
+        //setPwm(15, 0, 0);
+        //setPwm(14, 0, 0);
+    }    
+     function RightRear_Z_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+       // setPwm(12, 0, 0);
+       // setPwm(13, 0, 0);
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
+        setPwm(0, 0, speed);
+        setPwm(1, 0, 0);
+    }
+     function RightRear_F_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+       // setPwm(12, 0, 0);
+       // setPwm(13, 0, 0);
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
+        setPwm(0, 0, 0);
+        setPwm(1, 0, speed);
     }    
     function Car_back(speed: number) {
 
@@ -722,8 +807,8 @@ namespace NSbit_小车类 {
         setPwm(12, 0, 0);
         setPwm(13, 0, speed);
 
-        setPwm(14, 0, 0);
-        setPwm(15, 0, speed);
+        setPwm(15, 0, 0);
+        setPwm(14, 0, speed);
 
         //pins.digitalWritePin(DigitalPin.P16, 0);
         //pins.analogWritePin(AnalogPin.P1, speed); //速度控制
