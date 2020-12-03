@@ -548,11 +548,19 @@ namespace NSbit_小车类 {
         //% blockId="Left_Z_Motor" block="左侧电机正转"
         Left_Z_Motor = 1,
         //% blockId="Left_F_Motor" block="左侧电机反转"
-        Left_F_Motor = 2
+        Left_F_Motor = 2,
         //% blockId="Right_Z_Motor" block="右侧电机正转"
         Right_Z_Motor = 3,
         //% blockId="Right_F_Motor" block="右侧电机反转"
-        Right_F_Motor = 4,		
+        Right_F_Motor = 4,
+        //% blockId="LeftRear_Z_Motor" block="左后侧电机正转"
+        Left_Z_Motor = 5,
+        //% blockId="LeftRear_F_Motor" block="左后侧电机反转"
+        Left_F_Motor = 6,
+        //% blockId="RightRear_Z_Motor" block="右后侧电机正转"
+        Right_Z_Motor = 7,
+        //% blockId="RightRear_F_Motor" block="右后侧电机反转"
+        Right_F_Motor = 8,
     }
 
     function i2cwrite(addr: number, reg: number, value: number) {
@@ -696,7 +704,71 @@ namespace NSbit_小车类 {
 
         setPwm(14, 0, 0);
         setPwm(15, 0, speed);
+    }   
+	function LeftRear_Z_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+        setPwm(3, 0, speed);
+        setPwm(2, 0, 0);
+
+        //setPwm(15, 0, 0);
+        //setPwm(14, 0, 0);
+    }
+   function LeftRear_F_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+        setPwm(3, 0, 0);
+        setPwm(2, 0, speed);
+
+        //setPwm(15, 0, 0);
+        //setPwm(14, 0, 0);
     }    
+     function RightRear_Z_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+       // setPwm(12, 0, 0);
+       // setPwm(13, 0, 0);
+
+        setPwm(0, 0, speed);
+        setPwm(1, 0, 0);
+    }
+     function RightRear_F_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+       // setPwm(12, 0, 0);
+       // setPwm(13, 0, 0);
+
+        setPwm(0, 0, 0);
+        setPwm(1, 0, speed);
+    }    	
     function Car_back(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
@@ -832,148 +904,52 @@ namespace NSbit_小车类 {
     export function RGB_Car_Big2(value: enColor): void {
 
         switch (value) {
-            case enColor.OFF: {
-				setPwm(1, 0, 4095);
-                setPwm(0, 0, 4095);
-                setPwm(2, 0, 4095);
-				
-				setPwm(4, 0, 4095);
-                setPwm(3, 0, 4095);
-                setPwm(5, 0, 4095);
-				
-				setPwm(7, 0, 4095);
-                setPwm(6, 0, 4095);
-                setPwm(8, 0, 4095);
-				
-                setPwm(11, 0, 4095);
-                setPwm(10, 0, 4095);
-                setPwm(9, 0, 4095);
-                break;
-            }
-            case enColor.Red: {
-				setPwm(1, 0, 0);
-                setPwm(0, 0, 4095);
-                setPwm(2, 0, 4095);
-				
-				setPwm(4, 0, 0);
-                setPwm(3, 0, 4095);
-                setPwm(5, 0, 4095);
-				
-				setPwm(7, 0, 0);
-                setPwm(6, 0, 4095);
-                setPwm(8, 0, 4095);
-				
-                setPwm(11, 0, 0);
-                setPwm(10, 0, 4095);
-                setPwm(9, 0, 4095);
-                break;
-            }
-            case enColor.Green: {
-				setPwm(1, 0, 4095);
-                setPwm(0, 0, 0);
-                setPwm(2, 0, 4095);
-				
-				setPwm(4, 0, 4095);
-                setPwm(3, 0, 0);
-                setPwm(5, 0, 4095);
-				
-				setPwm(7, 0, 4095);
-                setPwm(6, 0, 0);
-                setPwm(8, 0, 4095);
-				
-                setPwm(11, 0, 4095);
-                setPwm(10, 0, 0);
-                setPwm(9, 0, 4095);
-                break;
-            }
-            case enColor.Blue: {
-				setPwm(1, 0, 4095);
-                setPwm(0, 0, 4095);
-                setPwm(2, 0, 0);
-				
-				setPwm(4, 0, 4095);
-                setPwm(3, 0, 4095);
-                setPwm(5, 0, 0);
-				
-				setPwm(7, 0, 4095);
-                setPwm(6, 0, 4095);
-                setPwm(8, 0, 0);
-				
-                setPwm(11, 0, 4095);
-                setPwm(10, 0, 4095);
-                setPwm(9, 0, 0);
-                break;
-            }
-            case enColor.White: {
-				setPwm(1, 0, 0);
-                setPwm(0, 0, 0);
-                setPwm(2, 0, 0);
-				
-				setPwm(4, 0, 0);
-                setPwm(3, 0, 0);
-                setPwm(5, 0, 0);
-				
-				setPwm(7, 0, 0);
-                setPwm(6, 0, 0);
-                setPwm(8, 0, 0);
-				
+            case enColor.OFF: {				
                 setPwm(11, 0, 0);
                 setPwm(10, 0, 0);
                 setPwm(9, 0, 0);
                 break;
             }
-            case enColor.Cyan: {
-				setPwm(1, 0, 4095);
-                setPwm(0, 0, 0);
-                setPwm(2, 0, 0);
-				
-				setPwm(4, 0, 4095);
-                setPwm(3, 0, 0);
-                setPwm(5, 0, 0);
-				
-				setPwm(7, 0, 4095);
-                setPwm(6, 0, 0);
-                setPwm(8, 0, 0);
-				
+            case enColor.Red: {				
                 setPwm(11, 0, 4095);
                 setPwm(10, 0, 0);
                 setPwm(9, 0, 0);
                 break;
             }
-            case enColor.Pinkish: {
-				setPwm(1, 0, 0);
-                setPwm(0, 0, 4095);
-                setPwm(2, 0, 0);
-				
-				setPwm(4, 0, 0);
-                setPwm(3, 0, 4095);
-                setPwm(5, 0, 0);
-				
-				setPwm(7, 0, 0);
-                setPwm(6, 0, 4095);
-                setPwm(8, 0, 0);
-				
+            case enColor.Green: {				
                 setPwm(11, 0, 0);
                 setPwm(10, 0, 4095);
                 setPwm(9, 0, 0);
                 break;
             }
-            case enColor.Yellow: {
-				setPwm(1, 0, 0);
-                setPwm(0, 0, 0);
-                setPwm(2, 0, 4095);
-				
-				setPwm(4, 0, 0);
-                setPwm(3, 0, 0);
-                setPwm(5, 0, 4095);
-				
-				setPwm(7, 0, 0);
-                setPwm(6, 0, 0);
-                setPwm(8, 0, 4095);
-				
+            case enColor.Blue: {				
                 setPwm(11, 0, 0);
                 setPwm(10, 0, 0);
                 setPwm(9, 0, 4095);
+                break;
+            }
+            case enColor.White: {				
+                setPwm(11, 0, 4095);
+                setPwm(10, 0, 4095);
+                setPwm(9, 0, 4095);
+                break;
+            }
+            case enColor.Cyan: {				
+                setPwm(11, 0, 0);
+                setPwm(10, 0, 4095);
+                setPwm(9, 0, 4095);
+                break;
+            }
+            case enColor.Pinkish: {				
+                setPwm(11, 0, 4095);
+                setPwm(10, 0, 0);
+                setPwm(9, 0, 4095);
+                break;
+            }
+            case enColor.Yellow: {				
+                setPwm(11, 0, 4095);
+                setPwm(10, 0, 4095);
+                setPwm(9, 0, 0);
                 break;
             }
         }
@@ -986,9 +962,9 @@ namespace NSbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Car_Big(value1: number, value2: number, value3: number): void {
 
-        let R = (255-value1) * 16;
-        let G = (255-value2) * 16;
-        let B = (255-value3) * 16;
+        let R = value1 * 16;
+        let G = value2 * 16;
+        let B = value3 * 16;
 
         if (R > 4096)
             R = 4095;
@@ -1000,19 +976,6 @@ namespace NSbit_小车类 {
         setPwm(11, 0, R);
         setPwm(10, 0, G);
         setPwm(9, 0, B);
-
-
-        setPwm(7, 0, R);
-        setPwm(6, 0, G);
-        setPwm(8, 0, B);
-		
-		setPwm(4, 0, R);
-        setPwm(3, 0, G);
-        setPwm(5, 0, B);
-		
-		setPwm(1, 0, R);
-        setPwm(0, 0, G);
-        setPwm(2, 0, B);
     }
 
     //% blockId=NSbit_RGB_Car_Program block="七彩流水灯"
@@ -1223,6 +1186,11 @@ namespace NSbit_小车类 {
             case AloneState.Left_F_Motor: Left_F_run(speed); break;
 			case AloneState.Right_Z_Motor: Right_Z_run(speed); break;
             case AloneState.Right_F_Motor: Right_F_run(speed); break;
+			case AloneState.LeftRear_Z_Motor: LeftRear_Z_run(speed); break;
+            case AloneState.LeftRear_F_Motor: LeftRear_F_run(speed); break;
+			case AloneState.RightRear_Z_Motor: RightRear_Z_run(speed); break;
+            case AloneState.RightRear_F_Motor: RightRear_F_run(speed); break;
+			
         }
     }    
 }
