@@ -641,7 +641,10 @@ namespace NSbit_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
         setPwm(12, 0, speed);
         setPwm(13, 0, 0);
 
@@ -658,6 +661,10 @@ namespace NSbit_小车类 {
             speed = 350
         }
 
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
         setPwm(12, 0, 0);
         setPwm(13, 0, speed);
 
@@ -676,7 +683,10 @@ namespace NSbit_小车类 {
 
        // setPwm(12, 0, 0);
        // setPwm(13, 0, 0);
-
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
         setPwm(14, 0, speed);
         setPwm(15, 0, 0);
     }
@@ -692,7 +702,10 @@ namespace NSbit_小车类 {
 
        // setPwm(12, 0, 0);
        // setPwm(13, 0, 0);
-
+        //使能
+		setPwm(5, 0, 4095);
+		setPwm(4, 0, 4095);
+		
         setPwm(14, 0, 0);
         setPwm(15, 0, speed);
     }    
