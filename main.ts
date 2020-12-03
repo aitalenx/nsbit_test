@@ -1211,6 +1211,10 @@ namespace NSbit_小车类 {
             case AloneState.Right_F_Motor: Right_F_run(speed); break;
             case AloneState.Left_Z_Motor: Left_Z_run(speed); break;
             case AloneState.Left_F_Motor: Left_F_run(speed); break;
+			case AloneState.RightRear_Z_Motor: RightRear_Z_run(speed); break;
+            case AloneState.RightRear_F_Motor: RightRear_F_run(speed); break;
+            case AloneState.LeftRear_Z_Motor: LeftRear_Z_run(speed); break;
+            case AloneState.LeftRear_F_Motor: LeftRear_F_run(speed); break;
         }
     }    
 }
