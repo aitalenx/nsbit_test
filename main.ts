@@ -638,7 +638,7 @@ namespace NSbit_小车类 {
         if (speed >= 4096) {
             speed = 4095
         }
-        if (speed <= 350) {
+        if (speed <= 350 && speed != 0) {
             speed = 350
         }
 
@@ -654,7 +654,7 @@ namespace NSbit_小车类 {
         if (speed >= 4096) {
             speed = 4095
         }
-        if (speed <= 350) {
+        if (speed <= 350 && speed != 0) {
             speed = 350
         }
 
@@ -670,7 +670,7 @@ namespace NSbit_小车类 {
         if (speed >= 4096) {
             speed = 4095
         }
-        if (speed <= 350) {
+        if (speed <= 350 && speed != 0) {
             speed = 350
         }
 
@@ -686,7 +686,7 @@ namespace NSbit_小车类 {
         if (speed >= 4096) {
             speed = 4095
         }
-        if (speed <= 350) {
+        if (speed <= 350 && speed != 0) {
             speed = 350
         }
 
