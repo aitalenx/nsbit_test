@@ -1,19 +1,19 @@
 {
     "name": "NSBit",
     "version": "0.0.1",
-    "description": "Extension for NSBOT micro:bit",
+    "description": "Extension for ZYRobot micro:bit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
         "neopixel": "github:microsoft/pxt-neopixel#v0.3.10",
-        "NSbit_IR": "github:zhuning239/cBit_IR"
+        "cbit_IR":  "github:zhuning239/cBit_IR"
 	
 
     },
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/nsbit-strings.json"
+        "_locales/zh/cbit-strings.json"
 
     ],
     "testFiles": [
