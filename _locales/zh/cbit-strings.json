@@ -15,7 +15,9 @@
   "NSbit_传感器类.IR_Send|block": "红外发射|引脚 %pin",
   "NSbit_传感器类.Ultrasonic|block": "超声波|发射管脚 %Trig|接收管脚 %Echo",
   "NSbit_温湿度类.set_pin|block": "DHT11|引脚 %pin",
+  "NSbit_超声波类.sonar_ping|block": "ping trig %trig|echo %echo|unit %unit",
   
+
   "NSbit_音乐类.Buzzer|block": "有源蜂鸣器|引脚 %pin|值 %value",
 
   "NSbit_电机类.Fan|block": "风扇|引脚 %pin|速度 %value",
