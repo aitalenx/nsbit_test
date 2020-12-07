@@ -1,5 +1,5 @@
 //% color=#f44242 icon="\uf197"
-namespace dht11 {
+namespace NSbit_温湿度类 {
     let pin = DigitalPin.P0;
     let DTH11value = 0;
     function signal_dht11(pin: DigitalPin): void {
