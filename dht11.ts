@@ -1,4 +1,4 @@
-//% color=#f44242 icon="\uf197" block="Let's Talk Science"
+//% color=#f44242 icon="\uf197"
 namespace dht11 {
     let pin = DigitalPin.P0;
     let DTH11value = 0;
