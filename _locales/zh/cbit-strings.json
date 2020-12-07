@@ -14,7 +14,7 @@
   "NSbit_传感器类.IR_Sensor|block": "红外传感器|引脚 %pin|  |%value|障碍物",
   "NSbit_传感器类.IR_Send|block": "红外发射|引脚 %pin",
   "NSbit_传感器类.Ultrasonic|block": "超声波|发射管脚 %Trig|接收管脚 %Echo",
-  "dht11.set_pin|block": "红外发射|引脚 %pin",
+  "dht11.set_pin|block": "DHT11|引脚 %pin",
   
   "NSbit_音乐类.Buzzer|block": "有源蜂鸣器|引脚 %pin|值 %value",
 
