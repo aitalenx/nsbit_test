@@ -1,4 +1,4 @@
-//% weight=0 color=#3CB371 icon="\uf2db" block="传感器"
+//% weight=0 color=#3CB371 icon="\uf2db" block="NSbit_传感器"
 namespace sensors {
 
     function signal_dht11(pin: DigitalPin): void {
