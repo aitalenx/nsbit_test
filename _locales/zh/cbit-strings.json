@@ -34,16 +34,16 @@
   "NSbit_小车类.CarCtrl|block": "小车控制|%index",
   "NSbit_小车类.CarCtrlSpeed|block": "小车控制|%index|速度 %speed"
   
-    "sensors|block": "传感器",
-    "sensors.sensor_ping|block": "超声波传感器 trig脚位 %trig|echo脚位 %echo|取得距离，单位 %unit",
-    "sensors.PingUnit.Centimeters|block":"公分",
-    "sensors.PingUnit.Inches|block":"英寸",
-    "sensors.PingUnit.MicroSeconds|block":"毫秒",
-    "sensors.get_DHT11_value|block": "温度传感器DHT11 脚位 %pin_arg|取得 %dhtResult",
-    "sensors.Dht11Result.Celsius|block": "摄氏温度",
-    "sensors.Dht11Result.Fahrenheit|block": "华氏温度",
-    "sensors.Dht11Result.humidity|block": "湿度",
-    "sensors.LEDType.cathode|block": "共陰極",
-    "sensors.LEDType.anode|block": "共阳极",
-    "sensors.RGBLight|block": "RGB LED 设定形态：%myType|红色脚位 %RedPin|绿色脚位 %GreenPin|蓝色脚位 %BluePin|红色值(0~255) %RedValue|绿色值(0~255) %GreenValue|蓝色值(0~255) %BlueValue"
+  "sensors|block": "传感器",
+  "sensors.sensor_ping|block": "超声波传感器 trig脚位 %trig|echo脚位 %echo|取得距离，单位 %unit",
+  "sensors.PingUnit.Centimeters|block":"公分",
+  "sensors.PingUnit.Inches|block":"英寸",
+  "sensors.PingUnit.MicroSeconds|block":"毫秒",
+  "sensors.get_DHT11_value|block": "温度传感器DHT11 脚位 %pin_arg|取得 %dhtResult",
+  "sensors.Dht11Result.Celsius|block": "摄氏温度",
+  "sensors.Dht11Result.Fahrenheit|block": "华氏温度",
+  "sensors.Dht11Result.humidity|block": "湿度",
+  "sensors.LEDType.cathode|block": "共阴极",
+  "sensors.LEDType.anode|block": "共阳极",
+  "sensors.RGBLight|block": "RGB LED 设定形态：%myType|红色脚位 %RedPin|绿色脚位 %GreenPin|蓝色脚位 %BluePin|红色值(0~255) %RedValue|绿色值(0~255) %GreenValue|蓝色值(0~255) %BlueValue"
 }
