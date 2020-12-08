@@ -13,8 +13,6 @@
     "files": [
         "README.md",
         "main.ts",
-		"dht11.ts",
-		"ultrasonic.ts",
 		"sensor.ts",
         "_locales/zh/cbit-strings.json"
 
