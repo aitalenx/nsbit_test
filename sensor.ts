@@ -1,4 +1,4 @@
-//% weight=0 color=#3CB371 icon="\uf2db" block="sensors"
+//% weight=0 color=#3CB371 icon="\uf2db" block="传感器"
 namespace sensors {
 
     function signal_dht11(pin: DigitalPin): void {
@@ -33,15 +33,15 @@ namespace sensors {
     }
 
     export enum Dht11Result {
-        //% block="Celsius"
+        //% block="摄氏温度"
         Celsius,
-        //% block="Fahrenheit"
+        //% block="华氏温度"
         Fahrenheit,
-        //% block="humidity"
+        //% block="湿度"
         humidity
     }
 
-    //% blockId=get_DHT11_value block="DHT11 set pin %pin_arg|get %dhtResult" blockExternalInputs=true
+    //% blockId=get_DHT11_value block="温湿度传感器引脚 %pin_arg|获取 %dhtResult" blockExternalInputs=true
     //% pin_arg.fieldEditor="gridpicker" pin_arg.fieldOptions.columns=4
     //% pin_arg.fieldOptions.tooltips="false" pin_arg.fieldOptions.width="300"
     export function get_DHT11_value(pin_arg: DigitalPin, dhtResult: Dht11Result): number {
@@ -69,7 +69,7 @@ namespace sensors {
         anode
     }
 
-    //% blockId=sensor_ping block="ultrasonic trig %trig|echo %echo|get distance %unit"
+    //% blockId=sensor_ping block="超声波传感器 Trig %trig|Echo %echo|获取距离 %unit"
     //% trig.fieldEditor="gridpicker" trig.fieldOptions.columns=4
     //% trig.fieldOptions.tooltips="false" trig.fieldOptions.width="300"
     //% echo.fieldEditor="gridpicker" echo.fieldOptions.columns=4
