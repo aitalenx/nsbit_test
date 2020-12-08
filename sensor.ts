@@ -54,11 +54,11 @@ namespace sensors {
     }
 
     export enum PingUnit {
-        //% block="cm"
+        //% block="厘米"
         Centimeters,
-        //% block="inches"
+        //% block="英寸"
         Inches,
-        //% block="μs"
+        //% block="毫秒"
         MicroSeconds
     }
 
