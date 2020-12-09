@@ -84,6 +84,44 @@ namespace TM1650 {
     //% blockId="TM650_SHOW_NUMBER" block="显示数字 %num"
     //% weight=100 blockGap=8
     export function showNumber(num: number) {
+		
+		let buf = pins.createBuffer(32);
+        buf[0] = 0;
+		buf[1] = 0;
+		buf[2] = 0;
+		buf[3] = 0;
+		buf[4] = 0;
+		buf[5] = 0;
+		buf[6] = 0;
+		buf[7] = 0;
+		buf[8] = 0;
+		buf[9] = 0;
+		buf[10] = 0;
+		buf[11] = 0;
+		buf[12] = 0;
+		buf[13] = 0;
+		buf[14] = 0;
+		buf[15] = 0;
+        buf[16] = 0;
+		buf[17] = 0;
+		buf[18] = 0;
+		buf[19] = 0;
+		buf[20] = 0;
+		buf[21] = 0;
+		buf[22] = 0;
+		buf[23] = 0;
+		buf[24] = 0;
+		buf[25] = 0;
+		buf[26] = 0;
+		buf[27] = 0;
+		buf[28] = 0;
+		buf[29] = 0;
+		buf[30] = 0;
+		buf[31] = 0;
+        pins.i2cWriteBuffer(DISPLAY_I2C_ADDRESS, buf);
+		
+		
+		
         if (num < 0) {
             dat(0, 0x40) // '-'
             num = -num
