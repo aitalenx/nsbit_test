@@ -14,9 +14,6 @@
         "README.md",
         "main.ts",
 		"sensor.ts",
-		"Display.ts",
-		"TM1650.cpp",
-		"TM1650.h",
         "_locales/zh/cbit-strings.json"
 
     ],
