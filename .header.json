@@ -1,0 +1,20 @@
+{
+    "target": "microbit",
+    "targetVersion": "3.0.63",
+    "name": "MCP23017",
+    "meta": {},
+    "editor": "tsprj",
+    "pubId": "",
+    "pubCurrent": false,
+    "_rev": null,
+    "id": "b1791bde-8ea3-47a7-f4e2-2b1758a1ee59",
+    "recentUse": 1607564738,
+    "modificationTime": 1607535910,
+    "blobId": null,
+    "blobVersion": null,
+    "blobCurrent": false,
+    "isDeleted": false,
+    "path": "MCP23017",
+    "githubCurrent": false,
+    "saveId": null
+}
