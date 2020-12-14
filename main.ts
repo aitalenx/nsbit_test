@@ -38,7 +38,7 @@ namespace NSbit_显示类 {
         ON =1
     }
 
-    //% blockId=cbit_LED1 block="LED灯|引脚 %pin|状态 %value"
+    //% blockId=NSbit_LED1 block="LED灯|引脚 %pin|状态 %value"
     //% weight=5
     //% blockGap=8
     //% color="#5984c7"
@@ -49,7 +49,7 @@ namespace NSbit_显示类 {
 
     }
 
-    //% blockId=cbit_LED2 block="LED灯|引脚 %pin|亮度 %value"
+    //% blockId=NSbit_LED2 block="LED灯|引脚 %pin|亮度 %value"
     //% weight=4
     //% blockGap=8
     //% color="#5984c7"
@@ -61,14 +61,14 @@ namespace NSbit_显示类 {
 
     }
 
-    //% blockId=cbit_BreathLED block="呼吸灯|引脚 %pin"
+    //% blockId=NSbit_BreathLED block="呼吸灯|引脚 %pin"
     //% weight=3
     //% blockGap=8
     //% color="#5984c7"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=3
     export function BreathLED(pin: AnalogPin): void {
 
-        for (let i: number = 0; i < 1023; i++) {
+        for (let i: number = 0; i < 1024; i++) {
             pins.analogWritePin(pin, i);
             //basic.pause(1);
             control.waitMicros(1000);
@@ -79,10 +79,11 @@ namespace NSbit_显示类 {
             //basic.pause(1);
             control.waitMicros(1000);
         }
-
+        pins.analogWritePin(pin, 0);
+		
     }
 
-    //% blockId=cbit_RGB block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|红色 %value1|绿色 %value2|蓝色 %value3"
+    //% blockId=NSbit_RGB block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|红色 %value1|绿色 %value2|蓝色 %value3"
     //% weight=2
     //% blockGap=8
     //% color="#5984c7"
@@ -95,7 +96,7 @@ namespace NSbit_显示类 {
         pins.analogWritePin(pin3, value3 * 1024 / 256);
 
     }
-    //% blockId=cbit_RGB2 block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|显示 %value"
+    //% blockId=NSbit_RGB2 block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|显示 %value"
     //% weight=1
     //% blockGap=8
     //% color="#5984c7"
@@ -178,10 +179,10 @@ namespace NSbit_传感器类 {
     }
     
 
-    //% blockId=cbit_Voice_Sensor block="声音传感器|引脚 %pin|返回 %value"
+    //% blockId=NSbit_Voice_Sensor block="声音传感器|引脚 %pin|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#b0c814"
+    //% color="#c89314"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Voice_Sensor(pin: DigitalPin, value: enVoice): boolean {
 
@@ -203,10 +204,10 @@ namespace NSbit_传感器类 {
             control.waitMicros(13);
         }
     }
-    //% blockId=cbit_IR_Sensor block="红外传感器|引脚 %pin|  |%value|障碍物"
+    //% blockId=NSbit_IR_Sensor block="红外传感器|引脚 %pin|  |%value|障碍物"
     //% weight=100
     //% blockGap=10
-    //% color="#b0c814"
+    //% color="#c89314"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function IR_Sensor(pin: DigitalPin, value: enIR): boolean {
 
@@ -221,10 +222,10 @@ namespace NSbit_传感器类 {
 
     }
 
-    //% blockId=cbit_IR_Send block="红外发射|引脚 %pin"
+    //% blockId=NSbit_IR_Send block="红外发射|引脚 %pin"
     //% weight=100
     //% blockGap=10
-    //% color="#b0c814"
+    //% color="#c89314"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function IR_Send(pin: DigitalPin): void {
 
@@ -233,8 +234,8 @@ namespace NSbit_传感器类 {
 
     }
    
-    //% blockId=cbit_ultrasonic block="超声波|发射管脚 %Trig|接收管脚 %Echo"
-    //% color="#b0c814"
+    //% blockId=NSbit_ultrasonic block="超声波|发射管脚 %Trig|接收管脚 %Echo"
+    //% color="#c89314"
     //% weight=100
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -289,10 +290,10 @@ namespace NSbit_输入类 {
         Realse = 1
     }
 
-    //% blockId=cbit_TouchPad block="触摸开关|引脚 %pin|返回 %value"
+    //% blockId=NSbit_TouchPad block="触摸开关|引脚 %pin|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#c89314"
+    //% color="#b0c814"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function TouchPad(pin: DigitalPin, value: enTouch): boolean {
 
@@ -305,10 +306,10 @@ namespace NSbit_输入类 {
         }
 
     }
-    //% blockId=cbit_Rocker block="遥杆|VRX %pin1|VRY %pin2|SW %pin3|返回 %value"
+    //% blockId=NSbit_Rocker block="遥杆|VRX %pin1|VRY %pin2|SW %pin3|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#c89314"
+    //% color="#b0c814"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
     export function Rocker(pin1: AnalogPin, pin2: AnalogPin, pin3: AnalogPin, value: enRocker): boolean {
 
@@ -347,10 +348,10 @@ namespace NSbit_输入类 {
 
     }
 
-    //% blockId=cbit_Button block="按键|引脚 %pin|返回 %value"
+    //% blockId=NSbit_Button block="按键|引脚 %pin|返回 %value"
     //% weight=100
     //% blockGap=10
-    //% color="#c89314"
+    //% color="#b0c814"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
     export function Button(pin: DigitalPin, value: enButton): boolean {
 
@@ -379,7 +380,7 @@ namespace NSbit_音乐类 {
         Beep
     }
 
-    //% blockId=cbit_Buzzer block="有源蜂鸣器|引脚 %pin|值 %value"
+    //% blockId=NSbit_Buzzer block="有源蜂鸣器|引脚 %pin|值 %value"
     //% weight=100
     //% blockGap=10 
     //% color="#14a8c8"
@@ -401,7 +402,7 @@ namespace NSbit_音乐类 {
 //% color="#de7372" weight=21 icon="\uf185"
 namespace NSbit_电机类 {
 
-    //% blockId=cbit_Fan block="风扇|引脚 %pin|速度 %value"
+    //% blockId=NSbit_Fan block="风扇|引脚 %pin|速度 %value"
     //% weight=100
     //% blockGap=10
     //% color="#de7372"
@@ -413,7 +414,7 @@ namespace NSbit_电机类 {
 
     }
 
-    //% blockId=cbit_Servo block="舵机|引脚 %pin|角度 %value"
+    //% blockId=NSbit_Servo block="舵机|引脚 %pin|角度 %value"
     //% weight=100
     //% blockGap=10
     //% color="#de7372"
@@ -427,7 +428,7 @@ namespace NSbit_电机类 {
 
 }
 
-//% color="#14c884" weight=20 icon="\uf1b9"
+//% color="#c85ad8" weight=20 icon="\uf1b9"
 namespace NSbit_小车类 {
 
     const PCA9685_ADD = 0x40
@@ -544,22 +545,22 @@ namespace NSbit_小车类 {
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="右前侧电机正转"
-        RightFront_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="右前侧电机反转"
-        RightFront_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="左前侧电机正转"
-        LeftFront_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="左前侧电机反转"
-        LeftFront_F_Motor = 4,
-        //% blockId="RightRear_Z_Motor" block="右后侧电机正转"
-        RightRear_Z_Motor = 5,
-        //% blockId="RightRear_F_Motor" block="右后侧电机反转"
-        RightRear_F_Motor = 6,
+        //% blockId="Left_Z_Motor" block="左侧电机正转"
+        Left_Z_Motor = 1,
+        //% blockId="Left_F_Motor" block="左侧电机反转"
+        Left_F_Motor = 2,
+        //% blockId="Right_Z_Motor" block="右侧电机正转"
+        Right_Z_Motor = 3,
+        //% blockId="Right_F_Motor" block="右侧电机反转"
+        Right_F_Motor = 4,
         //% blockId="LeftRear_Z_Motor" block="左后侧电机正转"
-        LeftRear_Z_Motor = 7,
+        Left_Z_Motor = 5,
         //% blockId="LeftRear_F_Motor" block="左后侧电机反转"
-        LeftRear_F_Motor = 8		
+        Left_F_Motor = 6,
+        //% blockId="RightRear_Z_Motor" block="右后侧电机正转"
+        Right_Z_Motor = 7,
+        //% blockId="RightRear_F_Motor" block="右后侧电机反转"
+        Right_F_Motor = 8,
     }
 
     function i2cwrite(addr: number, reg: number, value: number) {
@@ -619,28 +620,17 @@ namespace NSbit_小车类 {
     }
 
 
-    function Car_run(speed: number) {
-
-        speed = speed * 16; // map 350 to 4096
-        if (speed >= 4096) {
-            speed = 4095
-        }
-        if (speed <= 350) {
-            speed = 350
-        }
-
-        setPwm(12, 0, speed);
-        setPwm(13, 0, 0);
-
-        setPwm(14, 0, speed);
-        setPwm(15, 0, 0);
-        //pins.digitalWritePin(DigitalPin.P16, 1);
-       // pins.analogWritePin(AnalogPin.P1, 1023-speed); //速度控制
-
-       // pins.analogWritePin(AnalogPin.P0, speed);//速度控制
-       // pins.digitalWritePin(DigitalPin.P8, 0);
+    function Car_run(speed: number) 
+	{	   
+		let buf = pins.createBuffer(5);
+        buf[0] = 1;
+        buf[1] = 2;
+        buf[2] = 3;
+        buf[3] = 4;
+        buf[4] = 5;
+		pins.spi.write(buf)
     }
-   function LeftFront_Z_run(speed: number) {
+   function Left_Z_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
         if (speed >= 4096) {
@@ -649,17 +639,14 @@ namespace NSbit_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
+
         setPwm(12, 0, speed);
         setPwm(13, 0, 0);
 
         //setPwm(15, 0, 0);
         //setPwm(14, 0, 0);
     }
-   function LeftFront_F_run(speed: number) {
+   function Left_F_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
         if (speed >= 4096) {
@@ -669,17 +656,13 @@ namespace NSbit_小车类 {
             speed = 350
         }
 
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
         setPwm(12, 0, 0);
         setPwm(13, 0, speed);
 
         //setPwm(15, 0, 0);
         //setPwm(14, 0, 0);
     }    
-     function RightFront_Z_run(speed: number) {
+     function Right_Z_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
         if (speed >= 4096) {
@@ -691,32 +674,26 @@ namespace NSbit_小车类 {
 
        // setPwm(12, 0, 0);
        // setPwm(13, 0, 0);
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
-        setPwm(15, 0, speed);
-        setPwm(14, 0, 0);
-    }
-     function RightFront_F_run(speed: number) {
 
-        speed = speed * 16; // map 350 to 4096
-        if (speed >= 4096) {
-            speed = 4095
-        }
-        if (speed <= 350 && speed != 0) {
-            speed = 350
-        }
-
-       // setPwm(12, 0, 0);
-       // setPwm(13, 0, 0);
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
-        setPwm(15, 0, 0);
         setPwm(14, 0, speed);
-    }    
+        setPwm(15, 0, 0);
+    }
+     function Right_F_run(speed: number) {
+
+        speed = speed * 16; // map 350 to 4096
+        if (speed >= 4096) {
+            speed = 4095
+        }
+        if (speed <= 350 && speed != 0) {
+            speed = 350
+        }
+
+       // setPwm(12, 0, 0);
+       // setPwm(13, 0, 0);
+
+        setPwm(14, 0, 0);
+        setPwm(15, 0, speed);
+    }   
 	function LeftRear_Z_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
@@ -726,10 +703,7 @@ namespace NSbit_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
+
         setPwm(3, 0, speed);
         setPwm(2, 0, 0);
 
@@ -746,10 +720,6 @@ namespace NSbit_小车类 {
             speed = 350
         }
 
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
         setPwm(3, 0, 0);
         setPwm(2, 0, speed);
 
@@ -768,10 +738,7 @@ namespace NSbit_小车类 {
 
        // setPwm(12, 0, 0);
        // setPwm(13, 0, 0);
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
+
         setPwm(0, 0, speed);
         setPwm(1, 0, 0);
     }
@@ -787,34 +754,21 @@ namespace NSbit_小车类 {
 
        // setPwm(12, 0, 0);
        // setPwm(13, 0, 0);
-        //使能
-		setPwm(5, 0, 4095);
-		setPwm(4, 0, 4095);
-		
+
         setPwm(0, 0, 0);
         setPwm(1, 0, speed);
-    }    
+    }    	
     function Car_back(speed: number) {
 
-        speed = speed * 16; // map 350 to 4096
-        if (speed >= 4096) {
-            speed = 4095
-        }
-        if (speed <= 350 && speed != 0) {
-            speed = 350
-        }
 
-        setPwm(12, 0, 0);
-        setPwm(13, 0, speed);
-
-        setPwm(15, 0, 0);
-        setPwm(14, 0, speed);
 
         //pins.digitalWritePin(DigitalPin.P16, 0);
         //pins.analogWritePin(AnalogPin.P1, speed); //速度控制
 
         //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//速度控制
         //pins.digitalWritePin(DigitalPin.P8, 1);
+		
+		pins.init(baudrate=1000000, bits=8, mode=0, sclk=pin13, mosi=pin15, miso=pin14)
     }
 
     function Car_left(speed: number) {
@@ -921,57 +875,57 @@ namespace NSbit_小车类 {
      * *****************************************************************
      * @param index
      */
-    //% blockId=cbit_RGB_Car_Big2 block="小车RGB探照灯|选择车灯颜色 %value"
+    //% blockId=NSbit_RGB_Car_Big2 block="小车RGB探照灯|选择车灯颜色 %value"
     //% weight=101
     //% blockGap=10
-    //% color="#c85ad8"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Car_Big2(value: enColor): void {
 
         switch (value) {
-            case enColor.OFF: {
+            case enColor.OFF: {				
                 setPwm(11, 0, 0);
                 setPwm(10, 0, 0);
                 setPwm(9, 0, 0);
                 break;
             }
-            case enColor.Red: {
+            case enColor.Red: {				
                 setPwm(11, 0, 4095);
                 setPwm(10, 0, 0);
                 setPwm(9, 0, 0);
                 break;
             }
-            case enColor.Green: {
+            case enColor.Green: {				
                 setPwm(11, 0, 0);
                 setPwm(10, 0, 4095);
                 setPwm(9, 0, 0);
                 break;
             }
-            case enColor.Blue: {
+            case enColor.Blue: {				
                 setPwm(11, 0, 0);
                 setPwm(10, 0, 0);
                 setPwm(9, 0, 4095);
                 break;
             }
-            case enColor.White: {
+            case enColor.White: {				
                 setPwm(11, 0, 4095);
                 setPwm(10, 0, 4095);
                 setPwm(9, 0, 4095);
                 break;
             }
-            case enColor.Cyan: {
+            case enColor.Cyan: {				
                 setPwm(11, 0, 0);
                 setPwm(10, 0, 4095);
                 setPwm(9, 0, 4095);
                 break;
             }
-            case enColor.Pinkish: {
+            case enColor.Pinkish: {				
                 setPwm(11, 0, 4095);
                 setPwm(10, 0, 0);
                 setPwm(9, 0, 4095);
                 break;
             }
-            case enColor.Yellow: {
+            case enColor.Yellow: {				
                 setPwm(11, 0, 4095);
                 setPwm(10, 0, 4095);
                 setPwm(9, 0, 0);
@@ -979,10 +933,10 @@ namespace NSbit_小车类 {
             }
         }
     }
-    //% blockId=cbit_RGB_Car_Big block="小车RGB探照灯|红色 %value1|绿色 %value2|蓝色 %value3"
+    //% blockId=NSbit_RGB_Car_Big block="小车RGB探照灯|红色 %value1|绿色 %value2|蓝色 %value3"
     //% weight=100
     //% blockGap=10
-    //% color="#c85ad8"
+    //% color="#C814B8"
     //% value1.min=0 value1.max=255 value2.min=0 value2.max=255 value3.min=0 value3.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Car_Big(value1: number, value2: number, value3: number): void {
@@ -1003,10 +957,10 @@ namespace NSbit_小车类 {
         setPwm(9, 0, B);
     }
 
-    //% blockId=cbit_RGB_Car_Program block="七彩流水灯"
+    //% blockId=NSbit_RGB_Car_Program block="七彩流水灯"
     //% weight=99
     //% blockGap=10
-    //% color="#c85ad8"
+    //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Car_Program(): neopixel.Strip {
          
@@ -1017,7 +971,7 @@ namespace NSbit_小车类 {
     }
 
 
-    //% blockId=cbit_ultrasonic_car block="超声波返回(cm)"
+    //% blockId=NSbit_ultrasonic_car block="超声波返回(cm)"
     //% color="#c85ad8"
     //% weight=98
     //% blockGap=10
@@ -1037,7 +991,7 @@ namespace NSbit_小车类 {
         return d / 58;
     }
 
-    //% blockId=cbit_Music_Car block="小车音乐播放|%index"
+    //% blockId=NSbit_Music_Car block="小车音乐播放|%index"
     //% weight=97
     //% blockGap=10
     //% color="#c85ad8"
@@ -1066,7 +1020,7 @@ namespace NSbit_小车类 {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=cbit_Servo_Car block="小车舵机|编号 %num|角度 %value"
+    //% blockId=NSbit_Servo_Car block="小车舵机|编号 %num|角度 %value"
     //% weight=96
     //% blockGap=10
     //% color="#c85ad8"
@@ -1081,7 +1035,7 @@ namespace NSbit_小车类 {
 
     }
 
-    //% blockId=cbit_Avoid_Sensor block="避障传感器|检测到 %value"
+    //% blockId=NSbit_Avoid_Sensor block="避障传感器|检测到 %value"
     //% weight=95
     //% blockGap=10
     //% color="#c85ad8"
@@ -1121,7 +1075,7 @@ namespace NSbit_小车类 {
         return temp;
 
     }
-    //% blockId=cbit_Line_Sensor block="巡线传感器|位置 %direct|检测到 %value"
+    //% blockId=NSbit_Line_Sensor block="巡线传感器|位置 %direct|检测到 %value"
     //% weight=94
     //% blockGap=10
     //% color="#c85ad8"
@@ -1166,7 +1120,7 @@ namespace NSbit_小车类 {
         return temp;
 
     }
-    //% blockId=cbit_CarCtrl block="小车控制|%index"
+    //% blockId=NSbit_CarCtrl block="小车控制|%index"
     //% weight=93
     //% blockGap=10
     //% color="#c85ad8"
@@ -1182,7 +1136,7 @@ namespace NSbit_小车类 {
             case CarState.Car_SpinRight: Car_spinright(255); break;
         }
     }
-    //% blockId=cbit_CarCtrlSpeed block="小车控制|%index|速度 %speed"
+    //% blockId=NSbit_CarCtrlSpeed block="小车控制|%index|速度 %speed"
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
@@ -1199,7 +1153,7 @@ namespace NSbit_小车类 {
             case CarState.Car_SpinRight: Car_spinright(speed); break;
         }
     }
-    //% blockId=cbit_AloneCtrlSpeed block="单独电机|%index|速度 %speed"
+    //% blockId=NSbit_AloneCtrlSpeed block="单独电机|%index|速度 %speed"
     //% weight=91
     //% blockGap=10
     //% speed.min=0 speed.max=255
@@ -1207,14 +1161,33 @@ namespace NSbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function AloneCtrlSpeed(index: AloneState, speed: number): void {
         switch (index) {
-            case AloneState.RightFront_Z_Motor: RightFront_Z_run(speed); break;
-            case AloneState.RightFront_F_Motor: RightFront_F_run(speed); break;
-            case AloneState.LeftFront_Z_Motor: LeftFront_Z_run(speed); break;
-            case AloneState.LeftFront_F_Motor: LeftFront_F_run(speed); break;
+            case AloneState.Left_Z_Motor: Left_Z_run(speed); break;
+            case AloneState.Left_F_Motor: Left_F_run(speed); break;
+			case AloneState.Right_Z_Motor: Right_Z_run(speed); break;
+            case AloneState.Right_F_Motor: Right_F_run(speed); break;
+			case AloneState.LeftRear_Z_Motor: LeftRear_Z_run(speed); break;
+            case AloneState.LeftRear_F_Motor: LeftRear_F_run(speed); break;
 			case AloneState.RightRear_Z_Motor: RightRear_Z_run(speed); break;
             case AloneState.RightRear_F_Motor: RightRear_F_run(speed); break;
-            case AloneState.LeftRear_Z_Motor: LeftRear_Z_run(speed); break;
-            case AloneState.LeftRear_F_Motor: LeftRear_F_run(speed); break;
+			
         }
     }    
+}
+    //% color="#14c884" weight=19
+    //% icon="\uf1eb"
+declare namespace NSbit_IR {
+
+    /**
+     * button pushed.
+     */
+    //% blockId=ir_received_left_event
+    //% block="按键 |%btn| 按下" shim=Mbit_IR::onPressEvent
+    function onPressEvent(btn: RemoteButton, body: () => void): void;
+
+    /**
+     * initialises local variablesssss
+     */
+    //% blockId=ir_init
+    //% block="红外接收器连接到 %pin" shim=Mbit_IR::init
+    function init(pin: Pins): void;
 }
